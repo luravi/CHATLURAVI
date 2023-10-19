@@ -1,0 +1,3 @@
+streamlit==1.27.2  # Suponiendo que estés usando esta versión; puedes verificarlo con `pip show streamlit`
+openai==0.28.1    # Ajusta según la versión que estés utilizando
+python-dotenv==1.0.0  # Ajusta si decides usarlo y según la versión que estés utilizando
