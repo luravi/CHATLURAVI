@@ -5,7 +5,7 @@ emoji_robo = "🤖"
 emoji_usuario = "🙋"
 
 # Carga la clave API de OpenAI desde los secretos de Streamlit 
-openai.api_key = st.secrets["chaveOpenAI"]
+openai.api_key = st.secrets["llaveOpenAI"]
 
 st.title(f'{emoji_robo} Pregunta a luravi')
 st.write('***')
