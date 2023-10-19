@@ -1,15 +1,13 @@
-﻿# app.py
-import streamlit as st 
-import os 
+import streamlit as st
 import openai
 
 emoji_robo = "🤖"
 emoji_usuario = "🙋"
 
-# Carga la clave API de OpenAI desde una variable de entorno
-openai.api_key = os.getenv('OPENAI_API_KEY')
+# Carga la clave API de OpenAI desde los secretos de Streamlit 
+openai.api_key = st.secrets["chaveOpenAI"]
 
-st.title(f'{emoji_robo} Pregunta a Luravi')
+st.title(f'{emoji_robo} Pregunta a luravi')
 st.write('***')
 
 # Si no existe un historial de conversación, lo inicializamos
@@ -28,28 +26,27 @@ with col2:
 
 if btn_enviar: 
     st.session_state.historial_conversacion.append({"role": "user", "content": pregunta})
-    retorno_openai = openai.ChatCompletion.create(
-        model = "gpt-3.5-turbo", 
-        messages = st.session_state.historial_conversacion,
-        max_tokens = 15000,
+    respuesta_openai = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=st.session_state.historial_conversacion,
+        max_tokens=15000,
         n=1
     )
     st.session_state.historial_conversacion.append(
         {"role": "assistant", 
-         "content": retorno_openai['choices'][0]['message']['content']})
-    
-if btn_limpiar: 
+         "content": respuesta_openai['choices'][0]['message']['content']}
+    )
+
+if btn_limpiar:
     st.session_state.historial_conversacion = []
     pregunta = ''
 
 if len(st.session_state.historial_conversacion) > 0:
-    for i in range(len(st.session_state.historial_conversacion)):
-        if i % 2 == 0:
-            with st.container():
-                st.write(f"{emoji_usuario} Tú: " + st.session_state.historial_conversacion[i]['content'])
+    for mensaje in st.session_state.historial_conversacion:
+        if mensaje['role'] == 'user':
+            st.write(f"{emoji_usuario} Tú: " + mensaje['content'])
         else:
-            with st.container():
-                st.write(f"{emoji_robo} Respuesta del IA: " + st.session_state.historial_conversacion[i]['content'])
+            st.write(f"{emoji_robo} Respuesta del IA: " + mensaje['content'])
 
 # Código para insertar el iframe
 iframe_code = """
@@ -58,5 +55,4 @@ iframe_code = """
 st.markdown(iframe_code, unsafe_allow_html=True)
 
 # Información en la barra lateral
-st.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>Por by LURAVI- 2023</h3>", unsafe_allow_html=True)
-
+st.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>Por Melo Jr &reg - 2023</h3>", unsafe_allow_html=True)
