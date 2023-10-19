@@ -1,0 +1,22 @@
+# .github/workflows/main.yml
+name: Deploy Streamlit App
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Aquí puedes añadir otros pasos para configurar tu entorno, instalar dependencias, etc.
+
+    - name: Deploy the app
+      run: ./deploy_script.sh  # Asegúrate de tener un script de despliegue adecuado
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
