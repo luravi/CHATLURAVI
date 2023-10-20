@@ -62,4 +62,4 @@ iframe_code = """
 st.markdown(iframe_code, unsafe_allow_html=True)
 
 # Información en la barra lateral
-st.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>Por Melo Jr &reg - 2023</h3>", unsafe_allow_html=True)
+st.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>Por luravi- 2023</h3>", unsafe_allow_html=True)
