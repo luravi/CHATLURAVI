@@ -58,7 +58,7 @@ mostrar_conversacion()
 # Código para insertar el iframe
 iframe_code = """
 <a href="https://chat.openai.com/auth/login" target="_blank">
-    <iframe width="100%" height="600px" src="https://chat.openai.com/auth/login" frameborder="0" allowfullscreen scrolling="yes"></iframe>
+    <iframe width="100%" height="600px" src="https://chat.openai.com/auth/login" frameborder="0" allowfullscreen scrolling="yes" sandbox="allow-same-origin allow-scripts allow-popups"></iframe>
 </a>
 """
 st.markdown(iframe_code, unsafe_allow_html=True)
