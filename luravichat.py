@@ -100,9 +100,7 @@ iframe_code = """
 """
 st.markdown(iframe_code, unsafe_allow_html=True)
 
-
-image_url = "https://raw.githubusercontent.com/luravi/CHATLURAVI/github/yo6.jpg"
-
+# Código para insertar la imagen en la barra lateral
 image_url = "https://raw.githubusercontent.com/luravi/CHATLURAVI/github/yo6.jpg"
 
 st.sidebar.markdown(
@@ -112,5 +110,6 @@ st.sidebar.markdown(
     f"</div>", 
     unsafe_allow_html=True
 )
+
 
 
