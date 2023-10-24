@@ -55,6 +55,10 @@ if btn_limpiar:
 
 mostrar_conversacion()
 
+# Código para insertar el botón
+link = '[Abrir Chat OpenAI](https://chat.openai.com/auth/login)'
+st.markdown(link, unsafe_allow_html=True)
+
 # Código para insertar el iframe
 iframe_code = """
 <a href="https://chat.openai.com/auth/login" target="_blank">
