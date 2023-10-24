@@ -56,8 +56,7 @@ if btn_limpiar:
 mostrar_conversacion()
 
 # Añadir texto debajo de los botones
-st.write("Por favor, si la cuota está excedida, ")
-st.markdown("[inicie sesión aquí](https://chat.openai.com/auth/login).", unsafe_allow_html=True)
+st.write("Por favor, si la cuota está excedida, inicie sesión aquí:")
 
 
 # Código para insertar el botón
