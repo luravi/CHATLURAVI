@@ -61,8 +61,8 @@ button_css = """
     .btn-container {
         display: flex;
         justify-content: center; /* Centra el contenido horizontalmente */
-        align-items: center;     /* Centra el contenido verticalmente */
-        height: 100vh;           /* Altura total de la ventana del navegador */
+       # align-items: center;     /* Centra el contenido verticalmente */
+       # height: 100vh;           /* Altura total de la ventana del navegador */
     }
     .btn-custom {
         color: white;
