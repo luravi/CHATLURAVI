@@ -102,9 +102,14 @@ st.markdown(iframe_code, unsafe_allow_html=True)
 
 image_url = "https://raw.githubusercontent.com/luravi/CHATLURAVI/github/yo6.jpg"
 
+image_url = "https://raw.githubusercontent.com/luravi/CHATLURAVI/github/yo6.jpg"
+
 st.sidebar.markdown(
-    f"<h3 style='text-align: center; font-size: 20px; color: Red'>Luravi- 2023</h3>"
-    f"<img src='{image_url}' width='200'>", 
+    f"<div style='text-align: center;'>"
+    f"<img src='{image_url}' width='200'><br>"
+    f"<h3 style='font-size: 20px; color: Red'>Luravi- 2023</h3>"
+    f"</div>", 
     unsafe_allow_html=True
 )
+
 
