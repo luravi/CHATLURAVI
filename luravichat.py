@@ -57,9 +57,12 @@ mostrar_conversacion()
 
 # Código para insertar el iframe
 iframe_code = """
-<iframe width="100%" height="600px" src="https://chat.openai.com/auth/login" frameborder="0" allowfullscreen scrolling="yes"></iframe>
+<a href="https://chat.openai.com/auth/login" target="_blank">
+    <iframe width="100%" height="600px" src="https://chat.openai.com/auth/login" frameborder="0" allowfullscreen scrolling="yes"></iframe>
+</a>
 """
 st.markdown(iframe_code, unsafe_allow_html=True)
+
 
 # Información en la barra lateral
 st.sidebar.markdown("<h3 style='text-align: center; font-size: 20px; color: Red'>Luravi- 2023</h3>", unsafe_allow_html=True)
