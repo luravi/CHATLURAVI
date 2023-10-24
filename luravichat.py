@@ -16,7 +16,8 @@ def procesar_pregunta(pregunta):
             max_tokens=15000,
             n=1
         )
-        return respuesta_openai['choices'][0]['message']['content']
+        return respuesta_openai['choices'][0]['message'][
+'content']
     except Exception as e:
         st.write(f"Error al obtener respuesta: {e}")
         return None
