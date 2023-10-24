@@ -56,8 +56,31 @@ if btn_limpiar:
 mostrar_conversacion()
 
 # Código para insertar el botón
-link = '[Abrir Chat OpenAI](https://chat.openai.com/auth/login)'
-st.markdown(link, unsafe_allow_html=True)
+button_css = """
+<style>
+    .btn-custom {
+        color: white;
+        background-color: #4CAF50; /* Color verde */
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+    }
+    .btn-custom:hover {
+        background-color: #45a049; /* Color verde oscuro al pasar el cursor */
+    }
+</style>
+"""
+
+button_html = f'<a href="https://chat.openai.com/auth/login" target="_blank" class="btn-custom">Abrir Chat OpenAI</a>'
+
+st.markdown(button_css + button_html, unsafe_allow_html=True)
+
 
 # Código para insertar el iframe
 iframe_code = """
