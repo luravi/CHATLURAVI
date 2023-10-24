@@ -16,8 +16,7 @@ def procesar_pregunta(pregunta):
             max_tokens=15000,
             n=1
         )
-        return respuesta_openai['choices'][0]['message'][
-'content']
+        return respuesta_openai['choices'][0]['message']['content']
     except Exception as e:
         st.write(f"Error al obtener respuesta: {e}")
         return None
@@ -65,19 +64,21 @@ button_css = """
     }
     .btn-custom {
         color: white;
-        background-color: #4CAF50; /* Color verde */
+        background-color: #4CAF50;
         padding: 10px 20px;
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
+        font-size: 1rem;
+        margin: 0.25rem;
         cursor: pointer;
         border: none;
         border-radius: 4px;
+        width: 90vw;  /* Ajusta según el ancho del dispositivo */
+        max-width: 300px;  /* Máximo ancho */
     }
     .btn-custom:hover {
-        background-color: #45a049; /* Color verde oscuro al pasar el cursor */
+        background-color: #45a049;
     }
 </style>
 """
@@ -89,8 +90,6 @@ button_html = """
 """
 
 st.markdown(button_css + button_html, unsafe_allow_html=True)
-
-
 
 # Código para insertar el iframe
 iframe_code = """
@@ -104,12 +103,15 @@ st.markdown(iframe_code, unsafe_allow_html=True)
 image_url = "https://raw.githubusercontent.com/luravi/CHATLURAVI/github/yo6.jpg"
 
 st.sidebar.markdown(
-    f"<div style='text-align: center;'>"
-    f"<img src='{image_url}' width='200'><br>"
-    f"<h3 style='font-size: 20px; color: Red'>Luravi- 2023</h3>"
-    f"</div>", 
+    f"""
+    <div style='text-align: center;'>
+        <img src='{image_url}' style='max-width: 100%; height: auto;'>
+        <h3 style='font-size: 20px; color: Red; margin-top: 0.5rem;'>Luravi- 2023</h3>
+    </div>
+    """, 
     unsafe_allow_html=True
 )
+
 
 
 
