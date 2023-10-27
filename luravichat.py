@@ -3,7 +3,7 @@ import openai
 import numpy as np
 import matplotlib.pyplot as plt
 from streamlit.components.v1 import html
-from streamlit_canvas import st_canvas
+from streamlit_drawable_canvas import st_canvas
 
 # Emojis
 emoji_profesor = "👩‍🏫"
