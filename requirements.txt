@@ -2,3 +2,6 @@ streamlit==1.27.2  # Suponiendo que estés usando esta versión; puedes verifica
 openai==0.28.1    # Ajusta según la versión que estés utilizando
 python-dotenv==1.0.0  # Ajusta si decides usarlo y según la versión que estés utilizando
 matplotlib==3.7.2
+streamlit-drawable-canvas==0.9.3
+landingai-streamlit-drawable-canvas==0.9.8
+canvas==0.3
